@@ -4,13 +4,25 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def pig_latin():
+    sentence = input('Enter a Sentence: ')
+    sentence = sentence.split()
+    pig_sentence = []
+
+    for word in sentence:
+        if word[0] in ["a", "e", "i", "o", "u"]:
+            pig_word = word+"yay"
+            pig_sentence.append(pig_word)
+        else:
+            pig_word = word[1:] + word[0] + "ay"
+            pig_sentence.append(pig_word)
+
+    pig_sentence = " ".join(pig_sentence)
+    print(pig_sentence)
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    pig_latin()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
